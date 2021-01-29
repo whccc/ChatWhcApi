@@ -6,6 +6,7 @@ module.exports = {
   //========================================================================
   async CreateUser(req: any, res: any) {
     try {
+      //console.log(req.body);
       //==================================================================================
       //IMPORTAMOS LA FUNCIÓN CREAR USARIO DEL MODELO Y PASAMOS LOS PARAMETROS DEL USARIO
       //==================================================================================
@@ -14,12 +15,12 @@ module.exports = {
       // ENVIO DE RESPUESTA API
       //========================
       res.status(200).json({
-        Succes: true,
+        Success: true,
       });
     } catch (Error) {
       console.log(Error);
       res.status(500).json({
-        Succes: false,
+        Success: false,
       });
     }
   },
