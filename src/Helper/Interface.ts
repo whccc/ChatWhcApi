@@ -1,6 +1,6 @@
 export interface ICreateUser {
   blobImageUser: string;
   strNameAndLastName: string;
-  strUser: String;
+  strUser: string;
   strPassword: string;
 }

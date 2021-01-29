@@ -1,24 +1,24 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const ConnextionDB = async ({
   user,
   password,
   host,
-  dbName,
+  dbName
 }: {
   user: string;
   password: string;
   host: string;
-  dbName: String;
+  dbName: string;
 }) => {
   try {
     const uri = `mongodb+srv://${user}:${password}${host}/${dbName}?retryWrites=true&w=majority`;
     await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
+      useFindAndModify: false
     });
-    console.log("Base de datos iniciada con éxito.");
+    console.log('Base de datos iniciada con éxito.');
   } catch (Error) {
     console.log(Error);
   }
