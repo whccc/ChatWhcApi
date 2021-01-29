@@ -3,7 +3,6 @@ const UserSchema = new Schema({
   blobImageUser: {
     type: String,
     trim: true,
-    required: true,
   },
   strNameAndLastName: {
     type: String,
