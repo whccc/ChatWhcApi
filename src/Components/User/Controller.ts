@@ -28,6 +28,18 @@ module.exports = {
   // FUNCIÓN LOGIN USER APP
   // ==
   async LoginUser(req: any, res: any) {
-    console.log(4);
+    try {
+      const Data = await MDUser.FindUserLogin(req.body);
+
+      res.status(200).json({
+        Success: Data !== null,
+        DataUser: Data
+      });
+    } catch (Error) {
+      console.log(Error);
+      res.status(500).json({
+        Success: false
+      });
+    }
   }
 };

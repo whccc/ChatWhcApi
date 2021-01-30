@@ -20,7 +20,7 @@ module.exports = {
       // CREAMOS EL OBJETO USER EN EL MODELO MONGODB
       // ==============================================
       const User = new MDMongoDBUser({
-        blobImageUser,
+        blobImageUser: `data:image/png;base64,${blobImageUser}`,
         strNameAndLastName,
         strUser,
         strPassword
@@ -29,6 +29,23 @@ module.exports = {
       // GUARDAMOS EL NUEVO USUARIO EN LA BASE DE DATOS MONGODB
       // ========================================================
       await User.save();
+    } catch (Error) {
+      throw Error;
+    }
+  },
+  //==================
+  // LOGIN USER
+  //===================
+  async FindUserLogin({
+    strUser,
+    strPassword
+  }: {
+    strUser: string;
+    strPassword: string;
+  }) {
+    try {
+      const Data = await MDMongoDBUser.findOne({ strUser, strPassword });
+      return Data;
     } catch (Error) {
       throw Error;
     }
