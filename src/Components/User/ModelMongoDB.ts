@@ -1,24 +1,24 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
 const UserSchema = new Schema({
   blobImageUser: {
     type: String,
-    trim: true,
+    trim: true
   },
   strNameAndLastName: {
     type: String,
     trim: true,
-    required: true,
+    required: true
   },
   strUser: {
     type: String,
     trim: true,
-    required: true,
+    required: true
   },
   strPassword: {
     type: String,
     trim: true,
-    required: true,
-  },
+    required: true
+  }
 });
 
-module.exports = model("Users", UserSchema);
+module.exports = model('Users', UserSchema);
